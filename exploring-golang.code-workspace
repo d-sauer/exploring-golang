@@ -1,0 +1,24 @@
+{
+	"folders": [
+		{
+			"path": "hello-cli-app"
+		},
+		{
+			"path": "hello-webassembly"
+		},
+		{
+			"path": "hellow-web"
+		},
+		{
+			"path": "hello-xpath"
+		},
+		{
+			"path": "sandbox"
+		}
+	],
+	"settings": {},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": []
+	}
+}

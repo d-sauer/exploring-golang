@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Go WebAssembly</title>
+    </head>
+
+    <body>
+        <script src="wasm_exec.js"></script>
+        <script>
+            if (!WebAssembly.instantiateStreaming) {
+                WebAssembly.instantiateStreaming = async (resp, importObject) => {
+                    const source = await(await resp).arrayBuffer();
+                    return await WebAssembly.instantiate(source, importObject);
+                };
+            }
+            const go = new Go()
+            let mod, inst;
+            WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject).then((result) => {
+                mod = result.module;
+                inst = result.instance;
+            }).catch((err) =>{
+                console.error(err)
+            });
+
+            var setResult
+            async function run() {
+
+                const printResultPromise = new Promise(resolve => {
+                    setResult = resolve
+                })
+                const run = go.run(inst)
+
+                const printResult = await printResultPromise
+
+                printResult(document.querySelector('#value1').value, document.querySelector('#value2').value)
+                await run
+
+                inst = await WebAssembly.instantiate(mod, go.importObject)
+            }
+        </script>
+        <button onClick="run()" id="runButton">Run</button>
+        <input id="value1" type="text">
+        <input id="value2" type="text">
+    </body>
+
+</html>

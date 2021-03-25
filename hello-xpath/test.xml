@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<ns0:Response xmlns:ns0="urn:oasis:names:tc:SAML:2.0:protocol"
+    xmlns:ns1="urn:oasis:names:tc:SAML:2.0:assertion"
+    xmlns:ns2="http://www.w3.org/2000/09/xmldsig#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="id-WHs2M7TdpQqFbGegS" Version="2.0" IssueInstant="2021-03-17T16:54:56Z" Destination="https://signin.aws.amazon.com/saml">
+    <ns1:Issuer Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity">https://d-auth-acceptance.tcloud-acc1.np.aws.kpn.org/idp/metadata</ns1:Issuer>
+    <ns0:Status>
+        <ns0:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success"/>
+    </ns0:Status>
+    <ns1:Assertion Version="2.0" ID="id-KZCUPG0gveJVO5M5G" IssueInstant="2021-03-17T16:54:56Z">
+        <ns1:Issuer Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity">https://d-auth-acceptance.tcloud-acc1.np.aws.kpn.org/idp/metadata</ns1:Issuer>
+        <ns2:Signature Id="Signature2">
+            <ns2:SignedInfo>
+                <ns2:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                <ns2:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+                <ns2:Reference URI="#id-KZCUPG0gveJVO5M5G">
+                    <ns2:Transforms>
+                        <ns2:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                        <ns2:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                    </ns2:Transforms>
+                    <ns2:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <ns2:DigestValue>9FBukCgtOQFgc7JCa7T6ARcixx/GkvEBFNetGVHGQ+8=</ns2:DigestValue>
+                </ns2:Reference>
+            </ns2:SignedInfo>
+            <ns2:SignatureValue>N5dBOxilGX/VzZeD7EBXCJjY2v81qpLi7sSFO5ZBugdCDZSd7MOAdRFLaCNy56mC BajDobcL2xq11lQumMIPOkUvLX3UZh9znUgVV5oG+Urbqjbd3/2lr08Yij5ODoWa XFiBOP/yHXLNfX8ONWe+Pe+/blxDDFNzBV+tJB88K2OfRGJ0rjre9qnQVT8ebvG/ 6LpXkew2WV179bO468RJF7HdFJfhkji6cP+yoMEXP7j5LYXxIAriajhAMqgKRF8S sl8rKXYFoKMGbYlDpP3EX/ptQ2a8oDUGY3uTP+tKBUQXLGIcV3FfWeDNjlpRm/ZB glIqMSPEn/AkOz9aaHSrqg==</ns2:SignatureValue>
+            <ns2:KeyInfo>
+                <ns2:X509Data>
+                    <ns2:X509Certificate>MIICtDCCAZwCCQDpYhW9hS1BRTANBgkqhkiG9w0BAQsFADAcMRowGAYDVQQDDBFpZHAubG9jYWxob3N0LmNvbTAeFw0yMDAxMjQxNDAxNTFaFw0zMDAxMjExNDAxNTFaMBwxGjAYBgNVBAMMEWlkcC5sb2NhbGhvc3QuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4x5Ebq44sDWVXvbk2D6eLBJ/d8HAyMRQLvHPgBAZ04VfMSjjF4bQ3oCtB9O6kmSYCBXYVjyGo0euMUAcSMXTNk74z7K6vfaAnlaXqs9mlr9zyAeUhBH407kAIdFWS3V2rG1rx448Kul+HXrm0OLcGq7UEBDLGAD1LtvkmxAGaGGvmWR83Y5mwH3dw2cnaSU4nHQjU4oj6QJ5n43l9lxfWRTxxOCGYHKIyepyloahPTMMVluzbkmRa5lky8H4uytxwdXTgGBtE9M7smR2cdodsjkWbWMvwMv4rxcNxZ3vooCTpBwjWXGGyCUf8Zlhc1M5M0fO87ksnLajtQJbs5lgRwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBeW66yXnbvdkyIHPocSCa6nAyHYKKCDOWwII/JyvLzJOWq9fl4EA/nKptQeuIdWGrLFL6Nq0Pd2x33WpGY0yW/OmOceCGWgVwz4qCu2OW/vCEc77IuHU+TGPrxsNKr5zxR0uxd9ToNvLyLWf+vyzwtXi4A0EeTaIoSfITtqdRA8EEaqLKrgVkLa8wqQgydlc09LKJOZyvtFcqe6Cu3FPRL3PgRe10LCfyagUbMmwjhScTZDaV6GpEp22/lDe7sSwick6r1nBWzswI7D2YoJbTfHjJxWjSa0gTT/bai+TlWFvPpubjF42ODO5Vr17GXbGrYBRHS+9OMUj55SaZf6xs7</ns2:X509Certificate>
+                </ns2:X509Data>
+            </ns2:KeyInfo>
+        </ns2:Signature>
+        <ns1:Subject>
+            <ns1:NameID SPNameQualifier="urn:amazon:webservices" Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">bende500</ns1:NameID>
+            <ns1:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+                <ns1:SubjectConfirmationData NotOnOrAfter="2021-03-17T17:54:56Z" Recipient="https://signin.aws.amazon.com/saml"/>
+            </ns1:SubjectConfirmation>
+        </ns1:Subject>
+        <ns1:Conditions NotBefore="2021-03-17T16:54:56Z" NotOnOrAfter="2021-03-17T17:54:56Z">
+            <ns1:AudienceRestriction>
+                <ns1:Audience>urn:amazon:webservices</ns1:Audience>
+            </ns1:AudienceRestriction>
+        </ns1:Conditions>
+        <ns1:AuthnStatement AuthnInstant="2021-03-17T16:54:56Z" SessionIndex="id-JQzS9hoSRDINgbMEr">
+            <ns1:AuthnContext>
+                <ns1:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:Password</ns1:AuthnContextClassRef>
+            </ns1:AuthnContext>
+        </ns1:AuthnStatement>
+        <ns1:AttributeStatement>
+            <ns1:Attribute Name="https://aws.amazon.com/SAML/Attributes/Role" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+                <ns1:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">arn:aws:iam::8888888:role/AuthReadOnly,arn:aws:iam::193941721853:saml-provider/d-auth</ns1:AttributeValue>
+                <ns1:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">arn:aws:iam::0000:role/AuthReadOnly,arn:aws:iam::717315092818:saml-provider/d-auth</ns1:AttributeValue>
+            </ns1:Attribute>
+            <ns1:Attribute Name="https://aws.amazon.com/SAML/Attributes/RoleSessionName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+                <ns1:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">d.8@n.com</ns1:AttributeValue>
+            </ns1:Attribute>
+        </ns1:AttributeStatement>
+    </ns1:Assertion>
+</ns0:Response>
