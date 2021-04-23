@@ -7,13 +7,16 @@
 			"path": "hello-webassembly"
 		},
 		{
-			"path": "hellow-web"
+			"path": "hello-web"
 		},
 		{
 			"path": "hello-xpath"
 		},
 		{
-			"path": "sandbox"
+			"path": "cli-sandbox"
+		},
+		{
+			"path": "pub-sub"
 		}
 	],
 	"settings": {},

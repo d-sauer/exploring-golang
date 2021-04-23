@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"time"
@@ -13,11 +14,13 @@ import (
 
 // Initiate web server
 func main() {
-	log.Println("Starting server on port: ", 9200)
+	const port = 2200
+
+	log.Println("Starting server on port: ", port)
 	router := router()
 	srv := &http.Server{
 		Handler:      router,
-		Addr:         "127.0.0.1:9200",
+		Addr:         fmt.Sprint("127.0.0.1:", port),
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 	}
