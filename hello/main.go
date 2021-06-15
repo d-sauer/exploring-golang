@@ -1,8 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
+	splitMe := "[some string] to extract"
+	split := strings.SplitN(splitMe, "]", 2)
+	fmt.Printf("Split string: '%s'\n", strings.TrimSpace(split[1]))
+
 	fmt.Println("Hello, world.")
 	variables()
 }
