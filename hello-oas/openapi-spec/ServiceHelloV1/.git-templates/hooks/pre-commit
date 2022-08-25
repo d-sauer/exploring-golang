@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+branch="$(git symbolic-ref HEAD)"
+
+if [[ "${branch}" = "refs/heads/master" ]]; then
+	echo "Can't commit to the master branch."
+	exit 1
+fi
+
+if [[ "${branch}" = "refs/heads/main" ]]; then
+	echo "Can't commit to the main branch."
+	exit 1
+fi
+
+exit 0

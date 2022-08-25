@@ -1,0 +1,6 @@
+name: offset
+in: query
+required: false
+schema:
+  type: integer
+description: Sets the first position to return from the results of the query.

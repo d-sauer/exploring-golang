@@ -1,0 +1,194 @@
+---
+openapi: 3.0.0
+info:
+  title: service/hello/v1
+  version: 1.0.0
+  contact:
+    name: Davor
+    email: davor
+  description: Hello world APIs
+servers:
+  - url: https://api.example.com/service/hello/v1
+paths:
+  /health:
+    get:
+      summary: Returns server health information
+      operationId: get-health
+      description: Health information of the API
+      parameters:
+        - $ref: common/parameters/correlation-id.yaml
+        - $ref: common/parameters/traceparent.yaml
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Health"
+              examples:
+                Up status:
+                  value:
+                    $ref: common/examples/200-health.yaml
+        "429":
+          $ref: "#/components/responses/429"
+        "500":
+          $ref: "#/components/responses/500"
+        "503":
+          $ref: "#/components/responses/503"
+      security:
+        - APIKey: []
+      tags:
+        - health
+  /example:
+    get:
+      summary: Get example
+      operationId: get-example
+      description: get example information
+      parameters:
+        - $ref: common/parameters/correlation-id.yaml
+        - $ref: common/parameters/traceparent.yaml
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+                    description: message.
+              examples:
+                Success:
+                  value:
+                    msg: "Hello Example!"
+        "400":
+          $ref: "#/components/responses/400"
+        "429":
+          $ref: "#/components/responses/429"
+        "500":
+          $ref: "#/components/responses/500"
+      tags:
+        - example
+      security:
+        - Oauth:
+          - READ
+components:
+  schemas:
+    Error:
+      $ref: specification/common/models/error.yaml
+    Health:
+      $ref: /common/models/health.yaml
+  securitySchemes:
+    APIKey:
+      name: apikey
+      type: apiKey
+      in: header
+      description: API Key Security Enforcement
+  responses:
+    "400":
+      description: 400 Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          examples:
+            400 Bad Request:
+              value:
+                $ref: common/examples/400.yaml
+    "401":
+      description: 401 UNAUTHORIZED
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          examples:
+            401 UNAUTHORIZED:
+              value:
+                $ref: common/examples/401.yaml
+    "403":
+      description: 403 UNAUTHORIZED
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          examples:
+            403 UNAUTHORIZED:
+              value:
+                $ref: common/examples/403.yaml
+    "404":
+      description: 404 Not Found
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          examples:
+            404 Not Found:
+              value:
+                $ref: common/examples/404.yaml
+    "405":
+      description: 405 Method Not Allowed
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          examples:
+            405 Method Not Allowed:
+              value:
+                $ref: common/examples/405.yaml
+    "415":
+      description: 415 Unsupported Media Type
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          examples:
+            415 Unsupported Media Type:
+              value:
+                $ref: common/examples/415.yaml
+    "429":
+      description: 429 Too Many Requests
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          examples:
+            429 Too Many Requests:
+              value:
+                $ref: common/examples/429.yaml
+    "500":
+      description: 500 Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          examples:
+            500 Internal Server Error:
+              value:
+                $ref: common/examples/500.yaml
+    "503":
+      description: 503 Service Unavailable
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          examples:
+            500 Internal Server Error:
+              value:
+                $ref: common/examples/503.yaml
+    "504":
+      description: 504 Gateway Timeout
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          examples:
+            500 Internal Server Error:
+              value:
+                $ref: common/examples/504.yaml
+security:
+  - Oauth:
+    - READ
+tags:
+  - name: example
+  - name: health

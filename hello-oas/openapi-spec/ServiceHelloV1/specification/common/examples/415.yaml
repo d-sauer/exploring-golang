@@ -1,0 +1,5 @@
+type: /problem/unsupported-media-type
+title: Unsupported Media Type
+status: 415
+detail: Invalid Content-Type Header
+instance: /problem/unsupported-media-type#invalid-content-type-header

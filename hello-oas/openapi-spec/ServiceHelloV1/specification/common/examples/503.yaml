@@ -1,0 +1,5 @@
+type: /problem/service-unavailable
+title: Service Unavailable
+status: 503
+detail: Service is unavailable at this moment
+instance: /problem/service-unavailable#service-is-unavailable-at-this-moment

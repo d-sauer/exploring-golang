@@ -1,0 +1,5 @@
+type: /problem/method-not-allowed
+title: Method Not Allowed
+status: 405
+detail: Requested HTTP method is not allowed
+instance: /problem/method-not-allowed#requested-http-method-is-not-allowed

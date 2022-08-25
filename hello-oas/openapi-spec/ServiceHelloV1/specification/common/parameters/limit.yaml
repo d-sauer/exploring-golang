@@ -1,0 +1,6 @@
+name: limit
+in: query
+required: false
+schema:
+  type: integer
+description: The maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.

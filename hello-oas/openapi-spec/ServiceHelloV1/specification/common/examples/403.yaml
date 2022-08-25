@@ -1,0 +1,5 @@
+type: /problem/unauthorised
+title: Unauthorised
+status: 403
+detail: Insufficient permission to grant access
+instance: /problem/unauthorised#insufficient-permission-to-grant-access

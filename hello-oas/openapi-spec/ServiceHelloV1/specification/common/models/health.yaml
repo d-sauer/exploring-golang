@@ -1,0 +1,16 @@
+description: health check data model
+type: object
+properties:
+  status:
+    type: string
+  date_time:
+    type: string
+  api_name:
+    type: string
+  api_version:
+    type: string
+required:
+  - status
+  - date_time
+  - api_name
+  - api_version
