@@ -10,7 +10,7 @@ func main() {
 	split := strings.SplitN(splitMe, "]", 2)
 	fmt.Printf("Split string: '%s'\n", strings.TrimSpace(split[1]))
 
-	fmt.Println("Hello, world.")
+	fmt.Println("Hello, world...")
 	variables()
 }
 
