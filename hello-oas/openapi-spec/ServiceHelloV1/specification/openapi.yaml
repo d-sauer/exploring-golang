@@ -45,8 +45,8 @@ paths:
       operationId: get-example
       description: get example information
       parameters:
-        - $ref: common/parameters/correlation-id.yaml
-        - $ref: common/parameters/traceparent.yaml
+        - $ref: "common/parameters/correlation-id.yaml"
+        - $ref: "common/parameters/traceparent.yaml"
       responses:
         "200":
           description: Success
@@ -76,9 +76,9 @@ paths:
 components:
   schemas:
     Error:
-      $ref: specification/common/models/error.yaml
+      $ref: "common/models/error.yaml"
     Health:
-      $ref: /common/models/health.yaml
+      $ref: "common/models/health.yaml"
   securitySchemes:
     APIKey:
       name: apikey

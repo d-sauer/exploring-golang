@@ -52,21 +52,21 @@ This section describes how this API product could or should be used to maximize 
 **Register**
 
 - Get an access key and usage reports for your apps.  
-  [Learn more...](https://developer.leaseplan.com/member/register)
+  [Learn more...](https://developer.example.com/member/register)
 
 [//]: # "Add - Link to the interactive API documentation"
 
 **Interactive API Documentation**
 
 - Use our Interactive API documentation to make an API call.  
-  [Learn more...](https://developer.leaseplan.com/io-docs)
+  [Learn more...](https://developer.example.com/io-docs)
 
 [//]: # "Add - to whom can I contact when I need technical assistance?"
 
 **Need technical assistance?**
 
 - Ask questions and get advice by sending an email to our support team.  
-  [Learn more...](https://developer.leaseplan.com/contact)
+  [Learn more...](https://developer.example.com/contact)
 
 [//]: # "Add - FAQs"
 
@@ -74,8 +74,8 @@ This section describes how this API product could or should be used to maximize 
 
 _"Where can I check the structure of the data?"_
 
-- Request/response structure can be checked in the [Interactive API Documentation](https://developer.leaseplan.com/io-docs) section.
+- Request/response structure can be checked in the [Interactive API Documentation](https://developer.example.com/io-docs) section.
 
 _"Which plans are applicable to this API?"_
 
-- Please check the [plan](https://developer.leaseplan.com/docs/read/products/demo_product1/Plan_Details) details for more informations on the each individual plans.
+- Please check the [plan](https://developer.example.com/docs/read/products/demo_product1/Plan_Details) details for more informations on the each individual plans.

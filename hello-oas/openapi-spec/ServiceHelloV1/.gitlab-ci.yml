@@ -1,4 +1,0 @@
-include:
-  project: "workloads/0026-wkl-ng-integration/pipeline/api-cicd"
-  file: "/template/default.yml"
-  ref: "stable"
