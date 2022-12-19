@@ -18,14 +18,13 @@ func TestInput(t *testing.T) {
     3
 `)}}
 
-	ic := calories.InventoryIndex{}
-
 	file, err := tf.Open("inventory.txt")
 	if err != nil {
 		t.Error(err)
 	}
 	defer file.Close()
 
+	ic := calories.InventoryIndex{}
 	calories.LoadInventory(file, &ic)
 
 	max := ic.MaxCalories()
