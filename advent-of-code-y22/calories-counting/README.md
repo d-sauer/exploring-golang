@@ -1,4 +1,4 @@
-# Calories counting
+# Day 1: Calories counting
 
 Analyze inventory
 ```bash

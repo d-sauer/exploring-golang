@@ -6,11 +6,6 @@ import (
 )
 
 func TestLoad(t *testing.T) {
-	//	tf := fstest.MapFS{"strategy.txt": {Data: []byte(`A Y
-	//B X
-	//C Z
-	//`)}}
-
 	tf := fstest.MapFS{"strategy.txt": {Data: []byte(`A X
 A Y
 A Z

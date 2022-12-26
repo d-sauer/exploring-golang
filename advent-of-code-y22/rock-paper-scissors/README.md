@@ -1,6 +1,6 @@
-# Calories counting
+# Day 2: Rock Paper Scissors
 
-Analyze inventory
+Game cheatsheet
 ```bash
 go run main.go -file=data/input.txt
 ```
