@@ -5,11 +5,9 @@ type Range struct {
 	End   int
 }
 
-// AssignemntCollide detect if RangeA is withing RangeB or otherwise around
-func AssignemntCollide(RangeA Range, RangeB Range) bool {
-	if RangeB.Start >= RangeA.Start && RangeB.End <= RangeA.End {
-		return true
-	} else if RangeA.Start >= RangeB.Start && RangeA.End <= RangeB.End {
+// IsColliding detect if RangeA is within RangeB or otherwise around
+func IsColliding(first, second Range) bool {
+	if second.Start >= first.Start && second.End <= first.End || first.Start >= second.Start && first.End <= second.End {
 		return true
 	}
 
