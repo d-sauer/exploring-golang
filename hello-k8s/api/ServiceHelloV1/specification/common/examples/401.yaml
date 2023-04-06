@@ -1,0 +1,6 @@
+value:
+  type: /problem/security-exception
+  title: Unauthorized
+  status: 401
+  detail: Invalid apiKey
+  instance: /problem/security-exception#invalid-apiKey

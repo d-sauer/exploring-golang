@@ -1,0 +1,5 @@
+type: /problem/gateway-timeout
+title: Gateway timeout
+status: 504
+detail: Application didn't receive a timely response from upstream server
+instance: /problem/gateway-timeout#application-didn-not-receive-a-timely-response-from-upstream-server

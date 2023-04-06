@@ -1,0 +1,6 @@
+name: sort
+in: query
+required: false
+schema:
+  type: string
+description: The field to sort on is defined by the sort query parameter.

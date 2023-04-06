@@ -1,0 +1,5 @@
+type: /problem/too-many-requests
+title: Too Many Requests
+status: 429
+detail: Too many requests in a given amount of time
+instance: /problem/too-many-requests#too-many-requests-in-a-given-amount-of-time

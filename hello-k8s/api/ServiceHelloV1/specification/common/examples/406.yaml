@@ -1,0 +1,5 @@
+type: /problem/not-acceptable
+title: Not Acceptable
+status: 406
+detail: Invalid Data Format
+instance: /problem/not-acceptable#invalid-data-format

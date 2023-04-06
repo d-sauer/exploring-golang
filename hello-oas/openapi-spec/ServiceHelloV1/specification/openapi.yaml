@@ -39,7 +39,7 @@ paths:
         - APIKey: []
       tags:
         - health
-  /example:
+  /hello:
     get:
       summary: Get example
       operationId: get-example
@@ -57,11 +57,16 @@ paths:
                 properties:
                   msg:
                     type: string
-                    description: message.
+                    description: Hello message
+                  date:
+                    type: string
+                    format: date
+                    description: Date and time when this message is send
               examples:
                 Success:
                   value:
                     msg: "Hello Example!"
+                    date: "2022-08-09T14:44:33Z"
         "400":
           $ref: "#/components/responses/400"
         "429":

@@ -1,0 +1,114 @@
+---
+openapi: 3.0.0
+info:
+  title: service/hello/v1
+  version: 1.0.0
+  contact:
+    name: Davor
+    email: davor.sauer@gmail.com
+  description: Provide description of the API
+servers:
+  - url: https://localhost:9070/hello-service
+paths:
+  /health:
+    get:
+      summary: Returns server health information
+      operationId: get-health
+      description: Health information of the API
+      responses:
+        "200":
+          description: OK
+#          headers:
+#            "correlation-id":
+#              $ref: "#/components/headers/correlation-id"
+#            "traceparent":
+#              $ref: "#/components/headers/traceparent"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Health"
+              examples:
+                Up status:
+                  $ref: "common/examples/200-health.yaml"
+components:
+  headers:
+    "correlation-id":
+      $ref: "common/headers/correlation-id.yaml"
+    "traceparent":
+      $ref: "common/headers/traceparent.yaml"
+  schemas:
+    Error:
+      $ref: common/models/error.yaml
+    Health:
+      $ref: common/models/health.yaml
+  responses:
+    "400":
+      description: 400 Bad Request
+#      headers:
+#        "correlation-id":
+#          $ref: "#/components/headers/correlation-id"
+#        "traceparent":
+#          $ref: "#/components/headers/traceparent"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          examples:
+            400 Bad Request:
+              $ref: "common/examples/400.yaml"
+    "401":
+      description: 401 UNAUTHORIZED
+#      headers:
+#        "correlation-id":
+#          $ref: "#/components/headers/correlation-id"
+#        "traceparent":
+#          $ref: "#/components/headers/traceparent"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          examples:
+            401 UNAUTHORIZED:
+              $ref: "common/examples/401.yaml"
+    "403":
+      description: 403 FORBIDDEN
+#      headers:
+#        "correlation-id":
+#          $ref: "#/components/headers/correlation-id"
+#        "traceparent":
+#          $ref: "#/components/headers/traceparent"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          examples:
+            403 FORBIDDEN:
+              $ref: "common/examples/403.yaml"
+    "404":
+      description: 404 Not Found
+#      headers:
+#        "correlation-id":
+#          $ref: "#/components/headers/correlation-id"
+#        "traceparent":
+#          $ref: "#/components/headers/traceparent"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          examples:
+            404 Not Found:
+              $ref: "common/examples/404.yaml"
+    "405":
+      description: 405 Method Not Allowed
+#      headers:
+#        "correlation-id":
+#          $ref: "#/components/headers/correlation-id"
+#        "traceparent":
+#          $ref: "#/components/headers/traceparent"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          examples:
+            405 Method Not Allowed:
+              $ref: "common/examples/405.yaml"

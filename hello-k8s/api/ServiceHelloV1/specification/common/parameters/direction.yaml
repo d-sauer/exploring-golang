@@ -1,0 +1,10 @@
+name: direction
+in: query
+required: false
+schema:
+  type: string
+  enum:
+    - ASC
+    - DESC
+  default: ASC
+description: The sorting direction supports two values, either ASC for ascending order, or DESC for the reverse.
