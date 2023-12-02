@@ -8,39 +8,35 @@ import (
 	"github.com/charmbracelet/lipgloss"
 )
 
-const size = 3
-
 var (
 	ledStyle = lipgloss.NewStyle().
 		Width(5).
 		Height(2).
 		BorderStyle(lipgloss.NormalBorder()).
-		BorderForeground(lipgloss.Color("69"))
+		BorderForeground(lipgloss.Color("99"))
 )
 
 type model struct {
-	ledMatrix [][]string // led matrix
+	ledMatrixColor [][]string // led matrix color
 }
 
-func initialModel() model {
-	ledMatrix := make([][]string, size)
+func initialModel(size int) model {
+	ledMatrixColor := make([][]string, size)
 	for i := 0; i < size; i++ {
-		ledMatrix[i] = make([]string, size)
+		ledMatrixColor[i] = make([]string, size)
 
 		// set default color
 		for n := 0; n < size; n++ {
-			ledMatrix[i][n] = "0"
-			//lipgloss.Color().RGBA()
+			ledMatrixColor[i][n] = "0"
 		}
 	}
 
 	return model{
-		ledMatrix: ledMatrix,
+		ledMatrixColor: ledMatrixColor,
 	}
 }
 
 func (m model) Init() tea.Cmd {
-	// Just return `nil`, which means "no I/O right now, please."
 	return nil
 }
 
@@ -56,7 +52,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		switch msg.String() {
 
 		case "0":
-			m.ledMatrix[0][0] = "-"
+			m.ledMatrixColor[0][0] = RgbToColor(252, 3, 173)
 
 		// These keys should exit the program.
 		case "ctrl+c", "q":
@@ -72,10 +68,10 @@ func (m model) View() string {
 	s := "Led matrix\n\n"
 
 	// Iterate over led matrix
-	for y, ledY := range m.ledMatrix {
+	for y, ledY := range m.ledMatrixColor {
 		var sx = make([]string, len(ledY))
-		for x, led := range ledY {
-			sx[x] = ledStyle.Render(fmt.Sprintf("[%d-%d](%s) ", x, y, led))
+		for x, _ := range ledY {
+			sx[x] = ledColor(m.ledMatrixColor[y][x]).Render(fmt.Sprintf(""))
 		}
 
 		s += lipgloss.JoinHorizontal(lipgloss.Left, sx...)
@@ -85,21 +81,23 @@ func (m model) View() string {
 	return s
 }
 
-func led() lipgloss.Style {
+func ledColor(color string) lipgloss.Style {
 	return lipgloss.NewStyle().
-		Bold(true).
-		Foreground(lipgloss.Color("#FAFAFA")).
-		Background(lipgloss.Color("#7D56F4")).
+		Width(3).
+		Height(1).
 		BorderStyle(lipgloss.RoundedBorder()).
-		BorderForeground(lipgloss.Color("228")).
-		BorderBackground(lipgloss.Color("63")).
-		Border(lipgloss.DoubleBorder(), true, true, true, true).
-		Width(1).
-		Height(1)
+		Padding(-1).
+		BorderForeground(lipgloss.Color("99")).
+		Background(lipgloss.Color(color))
+}
+
+func RgbToColor(r int, g int, b int) string {
+	c := NewRGBColor(r, g, b)
+	return c.ToHex()
 }
 
 func main() {
-	p := tea.NewProgram(initialModel())
+	p := tea.NewProgram(initialModel(3))
 	if _, err := p.Run(); err != nil {
 		fmt.Printf("Alas, there's been an error: %v", err)
 		os.Exit(1)
