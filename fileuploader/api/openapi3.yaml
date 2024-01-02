@@ -1,0 +1,104 @@
+openapi: "3.0.0"
+info:
+  title: FileUploader Service
+  description: API Service for uploading files to temporarily given URL
+  version: 1.0.0
+servers:
+  - url: '/api'
+paths:
+  /health:
+    get:
+      summary: Health check
+      description: Check if the service is running and ready to receive a traffic
+      operationId: healthCheck
+      tags:
+        - service
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthCheckResponse'
+        '503':
+          description: Service temporarily unavailable.
+  /ping:
+    get:
+      summary: Ping check
+      operationId: pingCheck
+      tags:
+        - service
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PingResponse'
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      name: X-Api-Key
+      in: header
+  responses:
+    NotFound:
+      description: The specified resource was not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    DefaultError:
+      description: Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+      required:
+        - code
+        - message
+    HealthCheckResponse:
+      type: object
+      properties:
+        status:
+          type: string
+        details:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/HealthCheckDetail'
+    HealthCheckDetail:
+      type: object
+      properties:
+        status:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        error:
+          type: string
+      required:
+        - status
+        - timestamp
+    PingResponse:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+tags:
+  - name: service
+    description: Service

@@ -1,0 +1,8 @@
+output: server.gen.go
+package: api
+generate:
+  embedded-spec: true
+  strict-server: true
+  models: true
+  chi-server: true
+  gorilla-server: false
