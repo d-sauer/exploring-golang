@@ -6,7 +6,7 @@ info:
 servers:
   - url: '/api'
 paths:
-  /health:
+  /v1/health:
     get:
       summary: Health check
       description: Check if the service is running and ready to receive a traffic
@@ -22,7 +22,7 @@ paths:
                 $ref: '#/components/schemas/HealthCheckResponse'
         '503':
           description: Service temporarily unavailable.
-  /ping:
+  /v1/ping:
     get:
       summary: Ping check
       operationId: pingCheck
@@ -39,7 +39,7 @@ components:
   securitySchemes:
     apiKey:
       type: apiKey
-      name: X-Api-Key
+      name: apikey
       in: header
   responses:
     NotFound:
